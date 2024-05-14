@@ -1,0 +1,35 @@
+{
+  "name": "poc-htmx",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./runServer.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mp40/poc-htmx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mp40/poc-htmx/issues"
+  },
+  "homepage": "https://github.com/mp40/poc-htmx#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "eslint": "^9.2.0",
+    "globals": "^14.0.0",
+    "prettier": "^3.2.5",
+    "supertest": "^7.0.0",
+    "vitest": "^1.6.0"
+  }
+}

@@ -1,6 +1,49 @@
+<!doctype html>
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.12"
+      integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+      crossorigin="anonymous"
+    ></script>
+  </head>
   <body>
-    <h1>POC HTMX</h1>
+    <div class="container">
+      <div class="nav-div">
+        <a
+          hx-post="/"
+          hx-trigger="click"
+          hx-target=".page-div"
+          hx-swap="outerHTML"
+          >Home</a
+        >
+        <br />
+        <a
+          data-hx-post="/shooting"
+          hx-trigger="click"
+          hx-target=".page-div"
+          hx-swap="outerHTML"
+          >Shooting</a
+        >
+        <br />
+        <a
+          data-hx-post="/shotguns"
+          hx-trigger="click"
+          hx-target=".page-div"
+          hx-swap="outerHTML"
+          >Shotguns</a
+        >
+        <br />
+        <a
+          data-hx-post="/hand-to-hand"
+          hx-trigger="click"
+          hx-target=".page-div"
+          hx-swap="outerHTML"
+          >Hand To Hand</a
+        >
+      </div>
+      <div class="page-div">page</div>
+    </div>
   </body>
 </html>

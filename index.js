@@ -1,6 +1,8 @@
 import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import Mustache from "mustache";
+import { readFileSync } from "fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -13,11 +15,17 @@ export function setupExpressServer() {
 }
 
 app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  const template = readFileSync(`${__dirname}/index.html`, "utf-8");
+  const homeTemplate = readFileSync(`${__dirname}/view/home.html`, "utf-8");
+  const page = Mustache.render(template, null, {
+    home: homeTemplate,
+  });
+
+  res.send(page);
 });
 
 app.post("/", (req, res) => {
-  res.send(`<div class='page-div'>Home Again</div>`);
+  res.sendFile(`${__dirname}/view/home.html`);
 });
 
 app.post("/shooting", (req, res) => {

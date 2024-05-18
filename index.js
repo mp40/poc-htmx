@@ -37,5 +37,5 @@ app.post("/shotguns", (req, res) => {
 });
 
 app.post("/hand-to-hand", (req, res) => {
-  res.send(`<div class='page-div'>Hand To Hand</div>`);
+  res.sendFile(`${__dirname}/view/hand-to-hand.html`);
 });

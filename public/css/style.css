@@ -75,6 +75,10 @@ body {
   margin: 0.66em 0;
 }
 
+.page-div > button {
+  padding: 1px 6px;
+}
+
 .home-page > p {
   margin: 1em 0;
 }
@@ -83,19 +87,25 @@ body {
   margin: 1em 0;
 }
 
-#hand-to-hand-form {
+.page-div > form {
   display: flex;
   flex-direction: column;
   width: fit-content;
 }
 
-#hand-to-hand-form > label {
+.page-div > form > label {
   display: flex;
   justify-content: space-between;
 }
 
-#hand-to-hand-form > label > span {
+.page-div > form > label > span {
   margin-right: 1em;
+}
+
+/* required to match gatsvy page this project clones
+indicates perhaps UI needs to be more standard? */
+.page-div > #shotguns-form > label {
+  margin-bottom: 0.5em;
 }
 
 .hand-to-hand-table {
@@ -121,4 +131,20 @@ body {
 
 .hand-to-hand-table > table > tbody > tr > td:nth-of-type(n + 2) {
   text-align: center;
+}
+
+.shotguns-page > .hit-locations {
+  display: flex;
+  width: 15em;
+  flex-wrap: wrap;
+}
+
+.shotguns-page > .hit-locations > span {
+  background-color: var(--usaf-light-grey);
+  border-radius: 5px;
+  padding: 2px;
+  width: 1.75em;
+  text-align: center;
+  margin-right: 0.5em;
+  margin-top: 1em;
 }

@@ -20,9 +20,39 @@ export function setupExpressServer() {
 
 app.get("/", (_, res) => {
   const template = readFileSync(`${__dirname}/index.html`, "utf-8");
-  const homeTemplate = readFileSync(`${__dirname}/view/home.html`, "utf-8");
+  const fragment = readFileSync(`${__dirname}/view/home.html`, "utf-8");
   const page = Mustache.render(template, null, {
-    home: homeTemplate,
+    page: fragment,
+  });
+
+  res.send(page);
+});
+
+app.get("/shooting", (_, res) => {
+  const template = readFileSync(`${__dirname}/index.html`, "utf-8");
+  const fragment = readFileSync(`${__dirname}/view/shooting.html`, "utf-8");
+  const page = Mustache.render(template, null, {
+    page: fragment,
+  });
+
+  res.send(page);
+});
+
+app.get("/shotguns", (_, res) => {
+  const template = readFileSync(`${__dirname}/index.html`, "utf-8");
+  const fragment = readFileSync(`${__dirname}/view/shotguns.html`, "utf-8");
+  const page = Mustache.render(template, null, {
+    page: fragment,
+  });
+
+  res.send(page);
+});
+
+app.get("/hand-to-hand", (_, res) => {
+  const template = readFileSync(`${__dirname}/index.html`, "utf-8");
+  const fragment = readFileSync(`${__dirname}/view/hand-to-hand.html`, "utf-8");
+  const page = Mustache.render(template, null, {
+    page: fragment,
   });
 
   res.send(page);
@@ -33,7 +63,7 @@ app.post("/", (_, res) => {
 });
 
 app.post("/shooting", (_, res) => {
-  res.send(`<div class='page-div'>Shooting</div>`);
+  res.sendFile(`${__dirname}/view/shooting.html`);
 });
 
 app.post("/shotguns", (_, res) => {

@@ -37,6 +37,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  padding: 1px 6px;
+}
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -147,4 +151,82 @@ indicates perhaps UI needs to be more standard? */
   text-align: center;
   margin-right: 0.5em;
   margin-top: 1em;
+}
+
+.shooting-page > .container {
+  display: flex;
+}
+
+.shooting-page > .container > .calculators {
+  margin-right: 2.5em;
+}
+
+.shooting-page > .container > .calculators > button {
+  margin-bottom: 1em;
+}
+
+.shooting-page > .container > .calculators > div:first-of-type {
+  margin-bottom: 1em;
+}
+
+/* del button? */
+.shooting-page
+  > .container
+  > .calculators
+  > div:first-of-type
+  > button:nth-of-type(2) {
+  margin-left: 0.25em;
+  background-color: rebeccapurple;
+}
+
+.shooting-page > .container > .calculators > div {
+  margin-bottom: 0.75em;
+  padding-bottom: 0.5em;
+  box-shadow: 0px 1px 0px 0px var(--usaf-light-grey);
+}
+
+.shooting-page > .container > .hit-chance {
+  display: flex;
+  flex-direction: column;
+  width: 7em;
+  border: 1px solid var(--panzer-grey);
+  height: min-content;
+}
+
+.shooting-page > .container > .hit-chance > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shooting-page > .container > .hit-chance > div:first-of-type {
+  background-color: var(--panzer-grey);
+  color: whitesmoke;
+}
+
+.shooting-page > .container > .hit-chance > div:nth-of-type(n + 2):hover {
+  background-color: white;
+  box-shadow: 0px 1px 5px 0px var(--london-grey);
+}
+
+.shooting-page > .container > .hit-chance > div > span {
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.shooting-fragment > span {
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+.shooting-fragment > .shooting-calculator {
+  width: 35em;
+}
+
+.shooting-fragment > .shooting-calculator > div {
+  margin-top: 0.25em;
+}
+
+.shooting-fragment > .shooting-calculator > div:nth-of-type(n + 2) {
+  display: flex;
+  justify-content: space-between;
 }

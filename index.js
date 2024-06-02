@@ -31,8 +31,13 @@ app.get("/", (_, res) => {
 app.get("/shooting", (_, res) => {
   const template = readFileSync(`${__dirname}/index.html`, "utf-8");
   const fragment = readFileSync(`${__dirname}/view/shooting.html`, "utf-8");
+  const calcFragment = readFileSync(
+    `${__dirname}/view/shooting-eal.html`,
+    "utf-8"
+  );
   const page = Mustache.render(template, null, {
     page: fragment,
+    calcFragment: calcFragment,
   });
 
   res.send(page);
@@ -63,7 +68,13 @@ app.post("/", (_, res) => {
 });
 
 app.post("/shooting", (_, res) => {
-  res.sendFile(`${__dirname}/view/shooting.html`);
+  const template = readFileSync(`${__dirname}/view/shooting.html`, "utf-8");
+  const fragment = readFileSync(`${__dirname}/view/shooting-eal.html`, "utf-8");
+  const fragmement = Mustache.render(template, null, {
+    calcFragment: fragment,
+  });
+
+  res.send(fragmement);
 });
 
 app.post("/shotguns", (_, res) => {

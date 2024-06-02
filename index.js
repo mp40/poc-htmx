@@ -43,6 +43,12 @@ app.get("/shooting", (_, res) => {
   res.send(page);
 });
 
+app.get("/shooting/calculator", (_, res) => {
+  const fragment = readFileSync(`${__dirname}/view/shooting-eal.html`, "utf-8");
+
+  res.send(fragment);
+});
+
 app.get("/shotguns", (_, res) => {
   const template = readFileSync(`${__dirname}/index.html`, "utf-8");
   const fragment = readFileSync(`${__dirname}/view/shotguns.html`, "utf-8");

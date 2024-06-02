@@ -3,7 +3,35 @@
 
   <div class="container">
     <div class="calculators">
-      <button type="button">add</button>
+      <button
+        type="button"
+        hx-get="/shooting/calculator"
+        hx-trigger="click"
+        hx-target=".calculators"
+        hx-swap="beforeend"
+        _="
+        on click
+        if .shooting-fragment.length == 1
+          remove @hidden from the next <button/>
+        end 
+        "
+      >
+        add
+      </button>
+
+      <button
+        hidden
+        type="button"
+        _="
+      on click      
+      remove last .shooting-fragment in .calculators
+      if .shooting-fragment.length < 2
+        add @hidden to me
+      end  
+      "
+      >
+        remove last
+      </button>
 
       {{> calcFragment}}
     </div>

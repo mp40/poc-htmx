@@ -97,10 +97,6 @@ app.post("/shotguns/random-locations", (req, res) => {
   res.send(fragmement);
 });
 
-app.delete("/shotguns/random-locations", (_, res) => {
-  res.send();
-});
-
 app.post("/hand-to-hand", (_, res) => {
   res.sendFile(`${__dirname}/view/hand-to-hand.html`);
 });

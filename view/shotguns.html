@@ -47,10 +47,10 @@
   <button type="submit" form="shotguns-form">Random Locations</button>
   <button
     type="button"
-    hx-delete="/shotguns/random-locations"
-    hx-trigger="click"
-    hx-target=".hit-locations"
-    hx-swap="innerHTML"
+    _="
+    on click
+    remove <span/> from .hit-locations
+    "
   >
     Clear Locations
   </button>

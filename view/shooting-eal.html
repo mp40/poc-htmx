@@ -2,7 +2,7 @@
   def calculateShootingForm(ele)
     make a FormData from ele called fd
     get the first .rof-text in ele then set rof to its innerHTML
-    set result to handleFormChange(fd.get('gun-level') as Int, fd.get('range') as Int, rof, fd.get('shooter-stance'), fd.get('target-size'), fd.get('shooter-movement'), fd.get('target-movement'))
+    set result to handleFormChange(fd.get('gun-level') as Int, fd.get('range') as Int, rof, fd.get('shooter-stance'), fd.get('target-size'), fd.get('shooter-movement') as Float, fd.get('target-movement') as Float)
     put result into the previous .eal-value from ele
   end
 </script>
@@ -20,6 +20,7 @@
     if (rof === "Auto") {
       auto = true;
     }
+
     return calculateEAL(
       gunLevel,
       range,
@@ -151,7 +152,6 @@
             Standing Exposed
           </option>
           <option value="Kneeling Exposed">Kneeling Exposed</option>
-          <option value="Prone/Crawl">Prone/Crawl</option>
           <option value="Prone/Crawl">Prone/Crawl</option>
           <option value="Running">Running</option>
           <option value="Low Crouch">Low Crouch</option>

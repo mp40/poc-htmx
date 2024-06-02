@@ -80,7 +80,7 @@ const targetSizeMods = {
 
 const shooterStanceMods = {
   Standing: 0,
-  "Standing & Braced ": 4,
+  "Standing & Braced": 4,
   Kneeling: 3,
   "Kneeling & Braced": 5,
   Prone: 6,
